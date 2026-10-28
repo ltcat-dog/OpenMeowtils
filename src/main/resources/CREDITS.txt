@@ -1,0 +1,6 @@
+Lunar agent - https://github.com/curxxed-mc/lunar-agent
+Skin denicker - https://github.com/PugrillaDev/Raven-Scripts/blob/main/Denicker.java
+Latency alerts - Blowsy
+Raven health ESP - Blowsy
+Bedwars map heights - Marmottons
+Copy chat - Skytils

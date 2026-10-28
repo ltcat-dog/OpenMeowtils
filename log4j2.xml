@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="wtf.tatp.meowtils.manager.log">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] [%logger{36}]: %msg%n"/>
+        </Console>
+        <File name="MeowtilsLog" fileName="logs/meowtils.log" append="true">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t/%level] [%logger{36}]: %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="wtf.tatp.meowtils" level="info" additivity="false">
+            <AppenderRef ref="MeowtilsLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MeowtilsLog"/>
+        </Root>
+    </Loggers>
+</Configuration>

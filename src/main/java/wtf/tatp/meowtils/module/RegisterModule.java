@@ -1,0 +1,168 @@
+package wtf.tatp.meowtils.module;
+
+import wtf.tatp.meowtils.gui.ModuleManager;
+import wtf.tatp.meowtils.module.advanced.AutoChest;
+import wtf.tatp.meowtils.module.advanced.AutoStairs;
+import wtf.tatp.meowtils.module.advanced.AutoSwap;
+import wtf.tatp.meowtils.module.advanced.DelayRemover;
+import wtf.tatp.meowtils.module.advanced.GhostHand;
+import wtf.tatp.meowtils.module.antisnipe.AntiCheat;
+import wtf.tatp.meowtils.module.antisnipe.AutoBlacklist;
+import wtf.tatp.meowtils.module.antisnipe.AutoSafelist;
+import wtf.tatp.meowtils.module.antisnipe.PartyDetector;
+import wtf.tatp.meowtils.module.antisnipe.SniperWarning;
+import wtf.tatp.meowtils.module.bedwars.AntiMisplace;
+import wtf.tatp.meowtils.module.bedwars.ArmorAlerts;
+import wtf.tatp.meowtils.module.bedwars.BedESP;
+import wtf.tatp.meowtils.module.bedwars.BedTracker;
+import wtf.tatp.meowtils.module.bedwars.ConsumeAlerts;
+import wtf.tatp.meowtils.module.bedwars.EventTimers;
+import wtf.tatp.meowtils.module.bedwars.HeightOverlay;
+import wtf.tatp.meowtils.module.bedwars.ItemAlerts;
+import wtf.tatp.meowtils.module.bedwars.PickupAlerts;
+import wtf.tatp.meowtils.module.bedwars.ResourceTracker;
+import wtf.tatp.meowtils.module.bedwars.ShopHelper;
+import wtf.tatp.meowtils.module.bedwars.TrapNotifier;
+import wtf.tatp.meowtils.module.bedwars.UpgradeAlerts;
+import wtf.tatp.meowtils.module.bedwars.UpgradeHUD;
+import wtf.tatp.meowtils.module.hypixel.AccountHider;
+import wtf.tatp.meowtils.module.hypixel.AutoChannel;
+import wtf.tatp.meowtils.module.hypixel.AutoGG;
+import wtf.tatp.meowtils.module.hypixel.AutoTip;
+import wtf.tatp.meowtils.module.hypixel.AutoWho;
+import wtf.tatp.meowtils.module.hypixel.Denicker;
+import wtf.tatp.meowtils.module.hypixel.MurdererFinder;
+import wtf.tatp.meowtils.module.hypixel.NickBot;
+import wtf.tatp.meowtils.module.hypixel.PartyNotifier;
+import wtf.tatp.meowtils.module.hypixel.Requeue;
+import wtf.tatp.meowtils.module.hypixel.SessionStats;
+import wtf.tatp.meowtils.module.hypixel.Stats;
+import wtf.tatp.meowtils.module.meowtils.GUI;
+import wtf.tatp.meowtils.module.meowtils.Icons;
+import wtf.tatp.meowtils.module.meowtils.Notifications;
+import wtf.tatp.meowtils.module.meowtils.Settings;
+import wtf.tatp.meowtils.module.meowtils.Teams;
+import wtf.tatp.meowtils.module.render.Animations;
+import wtf.tatp.meowtils.module.render.AntiInvis;
+import wtf.tatp.meowtils.module.render.BlockCount;
+import wtf.tatp.meowtils.module.render.BreakProgress;
+import wtf.tatp.meowtils.module.render.Cape;
+import wtf.tatp.meowtils.module.render.ChestESP;
+import wtf.tatp.meowtils.module.render.ConsumeTimer;
+import wtf.tatp.meowtils.module.render.DamageTags;
+import wtf.tatp.meowtils.module.render.HealthDisplay;
+import wtf.tatp.meowtils.module.render.HealthESP;
+import wtf.tatp.meowtils.module.render.Indicators;
+import wtf.tatp.meowtils.module.render.InstantHurt;
+import wtf.tatp.meowtils.module.render.ItemESP;
+import wtf.tatp.meowtils.module.render.ItemScale;
+import wtf.tatp.meowtils.module.render.PingHUD;
+import wtf.tatp.meowtils.module.render.PotionHUD;
+import wtf.tatp.meowtils.module.render.ShinyPots;
+import wtf.tatp.meowtils.module.render.TimeChanger;
+import wtf.tatp.meowtils.module.skywars.CooldownHUD;
+import wtf.tatp.meowtils.module.skywars.EquipAlerts;
+import wtf.tatp.meowtils.module.skywars.ItemHighlight;
+import wtf.tatp.meowtils.module.skywars.MiningAlerts;
+import wtf.tatp.meowtils.module.skywars.NoArmorDye;
+import wtf.tatp.meowtils.module.skywars.PearlDetector;
+import wtf.tatp.meowtils.module.skywars.SkywarsAlerts;
+import wtf.tatp.meowtils.module.skywars.StrengthESP;
+import wtf.tatp.meowtils.module.utility.ActionSounds;
+import wtf.tatp.meowtils.module.utility.AntiObfuscate;
+import wtf.tatp.meowtils.module.utility.AutoText;
+import wtf.tatp.meowtils.module.utility.ChatFilter;
+import wtf.tatp.meowtils.module.utility.Freelook;
+import wtf.tatp.meowtils.module.utility.HotbarLock;
+import wtf.tatp.meowtils.module.utility.LatencyAlerts;
+import wtf.tatp.meowtils.module.utility.NoParticles;
+import wtf.tatp.meowtils.module.utility.NoTitles;
+import wtf.tatp.meowtils.module.utility.NullMove;
+import wtf.tatp.meowtils.module.utility.Sprint;
+import wtf.tatp.meowtils.module.utility.ViewClip;
+
+public class RegisterModule {
+    public static void init() {
+        ModuleManager.register(
+            new GUI(),
+            new AntiCheat(),
+            new AntiObfuscate(),
+            new ArmorAlerts(),
+            new AutoChannel(),
+            new AutoSafelist(),
+            new AutoTip(),
+            new AutoWho(),
+            new BreakProgress(),
+            new Cape(),
+            new ConsumeTimer(),
+            new Denicker(),
+            new HealthDisplay(),
+            new ItemAlerts(),
+            new ItemHighlight(),
+            new LatencyAlerts(),
+            new Notifications(),
+            new NoTitles(),
+            new NullMove(),
+            new ConsumeAlerts(),
+            new ResourceTracker(),
+            new ShinyPots(),
+            new Sprint(),
+            new Stats(),
+            new StrengthESP(),
+            new UpgradeAlerts(),
+            new ViewClip(),
+            new SkywarsAlerts(),
+            new MiningAlerts(),
+            new CooldownHUD(),
+            new AutoText(),
+            new AutoChest(),
+            new NoArmorDye(),
+            new EquipAlerts(),
+            new ChestESP(),
+            new Settings(),
+            new PotionHUD(),
+            new HotbarLock(),
+            new PearlDetector(),
+            new AutoSwap(),
+            new BlockCount(),
+            new BedTracker(),
+            new InstantHurt(),
+            new DelayRemover(),
+            new AutoStairs(),
+            new AntiInvis(),
+            new TrapNotifier(),
+            new ActionSounds(),
+            new Teams(),
+            new PartyNotifier(),
+            new Icons(),
+            new SniperWarning(),
+            new Animations(),
+            new AntiMisplace(),
+            new AutoGG(),
+            new Requeue(),
+            new ItemESP(),
+            new Indicators(),
+            new AccountHider(),
+            new SessionStats(),
+            new EventTimers(),
+            new TimeChanger(),
+            new BedESP(),
+            new HeightOverlay(),
+            new ShopHelper(),
+            new NoParticles(),
+            new UpgradeHUD(),
+            new DamageTags(),
+            new ItemScale(),
+            new MurdererFinder(),
+            new Freelook(),
+            new HealthESP(),
+            new PartyDetector(),
+            new NickBot(),
+            new PingHUD(),
+            new GhostHand(),
+            new ChatFilter(),
+            new AutoBlacklist(),
+            new PickupAlerts()
+        );
+    }
+}
